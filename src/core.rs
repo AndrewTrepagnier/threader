@@ -22,7 +22,29 @@ struct Args{
 }
 
 
+#[derive(Debug, Deserialize)]
+struct Message{
 
+
+	sender_full_name : String,
+	contetn: String,
+}
+
+
+
+fn main() {
+
+	let args = Args::parse();
+
+	let data = fs::read_to_string(&args.input).expect("Failed to read the input argument")
+
+	let messages: Vec<Message> = 
+		serde_json::from_str(&data).expect("Failed to parse Zulip JSON")
+
+		
+
+
+}
 
 
 
