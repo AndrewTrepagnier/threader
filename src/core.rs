@@ -41,7 +41,16 @@ fn main() {
 	let messages: Vec<Message> = 
 		serde_json::from_str(&data).expect("Failed to parse Zulip JSON")
 
-		
+	let mut transcript = String::new();
+
+	for m in msg{
+
+		transcript.push_str(&format!("{}:\n{}\n\n\n" m.sender_full_name, m.content))
+
+	}
+
+
+	
 
 
 }
